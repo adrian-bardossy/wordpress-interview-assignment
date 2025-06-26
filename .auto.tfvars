@@ -16,3 +16,6 @@ a_record_values = []
 domain_name = "interviewtest.com"
 #KMS
 kms_alias_name = "alias/wordpress"
+
+###k k8s vars
+k8s_namespace = "wordpress"

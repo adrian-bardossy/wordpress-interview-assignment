@@ -67,3 +67,9 @@ variable "kms_alias_name" {
   type        = string
   description = "Alias for the kms key"
 }
+
+### k8s variables
+variable "k8s_namespace" {
+  type        = string
+  description = "k8s deployment namespace"
+}
