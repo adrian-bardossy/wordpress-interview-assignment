@@ -12,7 +12,7 @@ variable "vpc_name" {
 
 #RDS
 variable "db_username" {
-  sensitive = true
+  sensitive   = true
   type        = string
   description = "db username"
 }
@@ -64,6 +64,6 @@ variable "domain_name" {
 
 #KMS
 variable "kms_alias_name" {
-  type = string
+  type        = string
   description = "Alias for the kms key"
 }

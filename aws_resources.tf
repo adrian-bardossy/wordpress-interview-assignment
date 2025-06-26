@@ -21,6 +21,7 @@ module "RDS" {
     module.VPC.vpc_public_subnet_id,
     module.VPC.vpc_private_subnet_id
   ])
+  depends_on = [module.VPC]
 }
 
 module "bastion" {
@@ -30,6 +31,7 @@ module "bastion" {
   vpc_subnet        = module.VPC.vpc_public_subnet_id[0]
   instance_key_name = var.instance_key_name
   public_ip         = var.public_ip
+  depends_on        = [module.VPC]
 }
 
 module "EBS" {
@@ -37,18 +39,19 @@ module "EBS" {
 }
 
 module "Route53" {
-  source = "./modules/aws_resources_module/Route53"
-  a_record_alias = var.a_record_alias
+  source          = "./modules/aws_resources_module/Route53"
+  a_record_alias  = var.a_record_alias
   a_record_values = var.a_record_values
 }
 
 module "ACM" {
-  source = "./modules/aws_resources_module/ACM"
+  source      = "./modules/aws_resources_module/ACM"
   domain_name = var.domain_name
-  zone_id = module.Route53.zone_id
+  zone_id     = module.Route53.zone_id
+  depends_on  = [module.Route53]
 }
 
 module "KMS" {
-  source = "./modules/aws_resources_module/KMS"
+  source         = "./modules/aws_resources_module/KMS"
   kms_alias_name = var.kms_alias_name
 }
