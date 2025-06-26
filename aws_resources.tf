@@ -35,3 +35,9 @@ module "bastion" {
 module "EBS" {
   source = "./modules/EBS"
 }
+
+module "Route53" {
+  source = "./modules/Route53"
+  a_record_alias = var.a_record_alias
+  a_record_values = var.a_record_values
+}

@@ -8,3 +8,6 @@ db_password = "MyPasswordToRDS"
 instance_name = "jamf-bastion-instance"
 instance_key_name = "jamf-bastion-kp"
 public_ip = "85.193.39.230/32"
+#Route53
+a_record_alias = null
+a_record_values = []

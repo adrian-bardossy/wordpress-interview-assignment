@@ -3,11 +3,14 @@ variable "aws_region" {
   description = "region to deploy the aws resources into"
 }
 
+#VPC
+
 variable "vpc_name" {
   type        = string
   description = "vpc_name"
 }
 
+#RDS
 variable "db_username" {
   sensitive = true
   type        = string
@@ -19,6 +22,8 @@ variable "db_password" {
   description = "db password"
   sensitive   = true
 }
+
+#Bastion
 
 variable "instance_key_name" {
   type        = string
@@ -32,4 +37,21 @@ variable "instance_name" {
 
 variable "public_ip" {
   type = string
+}
+
+#Route53
+variable "a_record_alias" {
+  description = "ALIAS record config, if using AWS resources"
+  type = object({
+    name                   = string
+    zone_id                = string
+    evaluate_target_health = bool
+  })
+  default = null
+}
+
+variable "a_record_values" {
+  description = "List of record values (IP addresses, etc.)"
+  type        = list(string)
+  default     = []
 }
