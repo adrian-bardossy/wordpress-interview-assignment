@@ -11,3 +11,10 @@ module "k8s_storage" {
   k8s_namespace          = module.k8s_namespace.interview_k8s_ns
   ebs_volume_id          = module.EBS.ebs_volume_id
 }
+
+module "k8s_secrets" {
+  source        = "./modules/k8s_resources_module/k8s_secrets"
+  k8s_namespace = module.k8s_namespace.interview_k8s_ns
+  db_password   = var.db_password
+  kms_key_id    = module.KMS.key_id
+}

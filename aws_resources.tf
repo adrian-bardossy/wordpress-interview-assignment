@@ -44,13 +44,6 @@ module "Route53" {
   a_record_values = var.a_record_values
 }
 
-module "ACM" {
-  source      = "./modules/aws_resources_module/ACM"
-  domain_name = var.domain_name
-  zone_id     = module.Route53.zone_id
-  depends_on  = [module.Route53]
-}
-
 module "KMS" {
   source         = "./modules/aws_resources_module/KMS"
   kms_alias_name = var.kms_alias_name
