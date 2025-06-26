@@ -1,9 +1,9 @@
 module "VPC" {
-  source = "./modules/vpc"
+  source = "./modules/aws_resources_module/vpc"
 }
 
 module "eks" {
-  source = "./modules/eks"
+  source = "./modules/aws_resources_module/eks"
   vpc_id = module.VPC.vpc_id
   subnet_ids = flatten([
     module.VPC.vpc_public_subnet_id,
@@ -13,7 +13,7 @@ module "eks" {
 }
 
 module "RDS" {
-  source      = "./modules/rds"
+  source      = "./modules/aws_resources_module/rds"
   vpc_id      = module.VPC.vpc_id
   db_username = var.db_username
   db_password = var.db_password
@@ -24,7 +24,7 @@ module "RDS" {
 }
 
 module "bastion" {
-  source            = "./modules/bastion"
+  source            = "./modules/aws_resources_module/bastion"
   instance_name     = var.instance_name
   vpc_id            = module.VPC.vpc_id
   vpc_subnet        = module.VPC.vpc_public_subnet_id[0]
@@ -33,22 +33,22 @@ module "bastion" {
 }
 
 module "EBS" {
-  source = "./modules/EBS"
+  source = "./modules/aws_resources_module/EBS"
 }
 
 module "Route53" {
-  source = "./modules/Route53"
+  source = "./modules/aws_resources_module/Route53"
   a_record_alias = var.a_record_alias
   a_record_values = var.a_record_values
 }
 
 module "ACM" {
-  source = "./modules/ACM"
+  source = "./modules/aws_resources_module/ACM"
   domain_name = var.domain_name
   zone_id = module.Route53.zone_id
 }
 
 module "KMS" {
-  source = "./modules/KMS"
+  source = "./modules/aws_resources_module/KMS"
   kms_alias_name = var.kms_alias_name
 }
