@@ -12,7 +12,7 @@ module "rds_sg" {
       from_port   = 3306
       to_port     = 3306
       protocol    = "tcp"
-      cidr_blocks = "0.0.0.0/0"
+      cidr_blocks = module.rds_sg.security_group_id
       description = "Allow MySQL access from VPC CIDRs"
     }
   ]
