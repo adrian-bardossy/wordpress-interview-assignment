@@ -13,11 +13,24 @@ module "eks" {
 }
 
 module "RDS" {
-  source         = "./modules/rds"
-  vpc_id         = module.VPC.vpc_id
-  db_password    = var.db_password
+  source      = "./modules/rds"
+  vpc_id      = module.VPC.vpc_id
+  db_password = var.db_password
   subnet_ids = flatten([
     module.VPC.vpc_public_subnet_id,
     module.VPC.vpc_private_subnet_id
   ])
+}
+
+module "bastion" {
+  source            = "./modules/bastion"
+  instance_name     = var.instance_name
+  vpc_id = module.VPC.vpc_id
+  vpc_subnet = module.VPC.vpc_public_subnet_id[0]
+  instance_key_name = var.instance_key_name
+  public_ip = var.public_ip 
+}
+
+module "EBS" {
+  source = "./modules/EBS"
 }

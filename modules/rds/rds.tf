@@ -52,8 +52,8 @@ module "rds" {
   multi_az                = false
   backup_retention_period = 7
   skip_final_snapshot     = true
-  family = "mariadb11.4"
-  major_engine_version = "11.4"
+  family                  = "mariadb11.4"
+  major_engine_version    = "11.4"
 
   tags = {
     Environment = "interview"
