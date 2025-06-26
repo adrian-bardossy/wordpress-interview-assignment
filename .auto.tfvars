@@ -18,4 +18,9 @@ domain_name = "interviewtest.com"
 kms_alias_name = "alias/wordpress"
 
 ###k k8s vars
+# k8s ns
 k8s_namespace = "wordpress"
+# k8s storage
+k8s_storage_class_name = "wordpress-storage-class"
+k8s_pv_name = "wordpress-ebs-pv"
+k8s_pvc_name = "wordpress-ebs-pvc"
