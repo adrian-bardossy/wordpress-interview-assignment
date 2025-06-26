@@ -3,6 +3,10 @@ variable "vpc_id" {
   description = "vpc id"
 }
 
+variable "db_username" {
+  type        = string
+  description = "db username"
+}
 variable "db_password" {
   type        = string
   description = "db password"

@@ -43,7 +43,7 @@ module "rds" {
   allocated_storage       = 20
   storage_type            = "gp3"
   storage_encrypted       = true
-  username                = local.db_username
+  username                = var.db_username
   password                = var.db_password
   port                    = 3306
   vpc_security_group_ids  = [module.rds_sg.security_group_id]

@@ -2,6 +2,7 @@ aws_region = "eu-south-1"
 ## aws module
 vpc_name = "jamf_vpc"
 #rds
+db_username = "wordpress"
 db_password = "MyPasswordToRDS"
 #bastion
 instance_name = "jamf-bastion-instance"

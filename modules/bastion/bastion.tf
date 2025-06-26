@@ -85,5 +85,5 @@ resource "aws_instance" "ubuntu_instance" {
     deployedBy = "Terraform"
     deployer   = "AdrianBardossy"
   }
-  depends_on = [ module.key-pair ]
+  depends_on = [module.key-pair]
 }
