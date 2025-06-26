@@ -57,4 +57,5 @@ resource "kubernetes_manifest" "cert_manager_clusterissuer" {
       }
     }
   }
+  depends_on = [helm_release.cert_manager]
 }
