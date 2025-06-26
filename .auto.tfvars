@@ -1,3 +1,4 @@
+### AWS resources
 aws_region = "eu-south-1"
 ## aws module
 vpc_name = "jamf_vpc"
@@ -11,3 +12,7 @@ public_ip = "85.193.39.230/32"
 #Route53
 a_record_alias = null
 a_record_values = []
+#ACM
+domain_name = "interviewtest.com"
+#KMS
+kms_alias_name = "alias/wordpress"

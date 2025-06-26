@@ -55,3 +55,15 @@ variable "a_record_values" {
   type        = list(string)
   default     = []
 }
+
+#ACM
+variable "domain_name" {
+  description = "The domain name for the certificate"
+  type        = string
+}
+
+#KMS
+variable "kms_alias_name" {
+  type = string
+  description = "Alias for the kms key"
+}

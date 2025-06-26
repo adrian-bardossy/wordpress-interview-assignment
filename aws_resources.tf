@@ -41,3 +41,14 @@ module "Route53" {
   a_record_alias = var.a_record_alias
   a_record_values = var.a_record_values
 }
+
+module "ACM" {
+  source = "./modules/ACM"
+  domain_name = var.domain_name
+  zone_id = module.Route53.zone_id
+}
+
+module "KMS" {
+  source = "./modules/KMS"
+  kms_alias_name = var.kms_alias_name
+}
