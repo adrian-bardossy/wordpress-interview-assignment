@@ -14,4 +14,6 @@ resource "kubernetes_secret" "db_password" {
   }
 
   type = "Opaque"
+
+  depends_on = [aws_kms_ciphertext.db_password_encrypted]
 }

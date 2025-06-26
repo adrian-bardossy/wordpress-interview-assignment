@@ -37,6 +37,7 @@ resource "kubernetes_persistent_volume" "wordpress_ebs_pv" {
       }
     }
   }
+  depends_on = [kubernetes_storage_class_v1.wordpress_storage_class]
 }
 
 resource "kubernetes_persistent_volume_claim" "wordpress_ebs_pvc" {
@@ -54,4 +55,5 @@ resource "kubernetes_persistent_volume_claim" "wordpress_ebs_pvc" {
       }
     }
   }
+  depends_on = [kubernetes_persistent_volume.wordpress_ebs_pv]
 }

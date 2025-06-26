@@ -90,3 +90,10 @@ variable "k8s_pvc_name" {
   type        = string
   description = "k8s pvc name"
 }
+
+### helm vars
+# cert-manager
+variable "dns_region" {
+  type        = string
+  description = "cert manager dns region"
+}
