@@ -9,6 +9,7 @@ variable "vpc_name" {
 }
 
 variable "db_username" {
+  sensitive = true
   type        = string
   description = "db username"
 }
