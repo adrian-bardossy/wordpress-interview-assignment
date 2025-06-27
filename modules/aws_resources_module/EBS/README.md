@@ -26,4 +26,4 @@ No inputs.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_ebs_volume_id"></a> [ebs\_volume\_id](#output\_ebs\_volume\_id) | n/a |
+| <a name="output_ebs_volume_id"></a> [ebs\_volume\_id](#output\_ebs\_volume\_id) | Published EBS volume ID for the further usage |

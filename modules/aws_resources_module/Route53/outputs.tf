@@ -10,4 +10,5 @@ output "name_servers" {
 
 output "domain_name" {
   value = local.zone_name
+  description = "Outputed value of the domain name deploted into the Route53 zone"
 }

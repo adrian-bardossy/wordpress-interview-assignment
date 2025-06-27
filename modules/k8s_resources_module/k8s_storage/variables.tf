@@ -1,16 +1,16 @@
 variable "k8s_storage_class_name" {
   type        = string
-  description = "storage class name"
+  description = "Storage class name"
 }
 
 variable "k8s_pv_name" {
   type        = string
-  description = "k8s pv wordpress name"
+  description = "K8s persistent volume wordpress name"
 }
 
 variable "k8s_pvc_name" {
   type        = string
-  description = "k8s pvc name"
+  description = "K8s persistent volume claim name"
 }
 
 variable "k8s_namespace" {
@@ -20,5 +20,5 @@ variable "k8s_namespace" {
 
 variable "ebs_volume_id" {
   type        = string
-  description = "PV storage class AWS EBS volume"
+  description = "Persistent volume storage class AWS EBS volume"
 }

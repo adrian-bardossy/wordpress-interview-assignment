@@ -1,15 +1,15 @@
 variable "vpc_id" {
   type        = string
-  description = "vpc id"
+  description = "Name of the VPC ID for the deployment"
 }
 
 variable "db_username" {
   type        = string
-  description = "db username"
+  description = "Name of the database username"
 }
 variable "db_password" {
   type        = string
-  description = "db password"
+  description = "Database password"
   sensitive   = true
 }
 

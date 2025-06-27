@@ -30,14 +30,14 @@ No requirements.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_instance_key_name"></a> [instance\_key\_name](#input\_instance\_key\_name) | n/a | `string` | n/a | yes |
-| <a name="input_instance_name"></a> [instance\_name](#input\_instance\_name) | n/a | `string` | n/a | yes |
-| <a name="input_public_ip"></a> [public\_ip](#input\_public\_ip) | n/a | `string` | n/a | yes |
-| <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | n/a | `string` | n/a | yes |
-| <a name="input_vpc_subnet"></a> [vpc\_subnet](#input\_vpc\_subnet) | n/a | `string` | n/a | yes |
+| <a name="input_instance_key_name"></a> [instance\_key\_name](#input\_instance\_key\_name) | Instance KP key name to access the instance with | `string` | n/a | yes |
+| <a name="input_instance_name"></a> [instance\_name](#input\_instance\_name) | Name of the ec2 instance | `string` | n/a | yes |
+| <a name="input_public_ip"></a> [public\_ip](#input\_public\_ip) | Public IP to be used to be able to access the instance from please consider using IP/32 | `string` | n/a | yes |
+| <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | VPC ID used to deploy the instance into | `string` | n/a | yes |
+| <a name="input_vpc_subnet"></a> [vpc\_subnet](#input\_vpc\_subnet) | Subnet used for the instance | `string` | n/a | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_ubuntu_eip_public_ip"></a> [ubuntu\_eip\_public\_ip](#output\_ubuntu\_eip\_public\_ip) | n/a |
+| <a name="output_ubuntu_eip_public_ip"></a> [ubuntu\_eip\_public\_ip](#output\_ubuntu\_eip\_public\_ip) | Published pubic IP (Elastic IP) of the instance |

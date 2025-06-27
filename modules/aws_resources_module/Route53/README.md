@@ -30,5 +30,6 @@ No modules.
 
 | Name | Description |
 |------|-------------|
+| <a name="output_domain_name"></a> [domain\_name](#output\_domain\_name) | Outputed value of the domain name deploted into the Route53 zone |
 | <a name="output_name_servers"></a> [name\_servers](#output\_name\_servers) | List of name servers for the hosted zone |
 | <a name="output_zone_id"></a> [zone\_id](#output\_zone\_id) | ID of the hosted zone |

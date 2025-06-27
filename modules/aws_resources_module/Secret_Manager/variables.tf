@@ -1,9 +1,9 @@
 variable "database_password" {
   type        = string
-  description = "database password input"
+  description = "Database password input"
 }
 
 variable "admin_password" {
   type    = string
-  default = "wordpress admin gui password"
+  default = "Wordpress admin gui password"
 }

@@ -21,13 +21,14 @@ No resources.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_db_password"></a> [db\_password](#input\_db\_password) | db password | `string` | n/a | yes |
-| <a name="input_db_username"></a> [db\_username](#input\_db\_username) | db username | `string` | n/a | yes |
+| <a name="input_db_password"></a> [db\_password](#input\_db\_password) | Database password | `string` | n/a | yes |
+| <a name="input_db_username"></a> [db\_username](#input\_db\_username) | Name of the database username | `string` | n/a | yes |
 | <a name="input_subnet_ids"></a> [subnet\_ids](#input\_subnet\_ids) | List of subnets in which is cluster deployed into | `list(string)` | n/a | yes |
-| <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | vpc id | `string` | n/a | yes |
+| <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | Name of the VPC ID for the deployment | `string` | n/a | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_rds_instance_id"></a> [rds\_instance\_id](#output\_rds\_instance\_id) | n/a |
+| <a name="output_db_name"></a> [db\_name](#output\_db\_name) | Publish database name for the usage in the other modules |
+| <a name="output_rds_instance_id"></a> [rds\_instance\_id](#output\_rds\_instance\_id) | Published Maria DB database instance endpoint identifier |

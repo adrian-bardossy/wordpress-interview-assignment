@@ -24,11 +24,11 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_ebs_volume_id"></a> [ebs\_volume\_id](#input\_ebs\_volume\_id) | PV storage class AWS EBS volume | `string` | n/a | yes |
+| <a name="input_ebs_volume_id"></a> [ebs\_volume\_id](#input\_ebs\_volume\_id) | Persistent volume storage class AWS EBS volume | `string` | n/a | yes |
 | <a name="input_k8s_namespace"></a> [k8s\_namespace](#input\_k8s\_namespace) | Namespace of wordpress app in cluster | `string` | n/a | yes |
-| <a name="input_k8s_pv_name"></a> [k8s\_pv\_name](#input\_k8s\_pv\_name) | k8s pv wordpress name | `string` | n/a | yes |
-| <a name="input_k8s_pvc_name"></a> [k8s\_pvc\_name](#input\_k8s\_pvc\_name) | k8s pvc name | `string` | n/a | yes |
-| <a name="input_k8s_storage_class_name"></a> [k8s\_storage\_class\_name](#input\_k8s\_storage\_class\_name) | storage class name | `string` | n/a | yes |
+| <a name="input_k8s_pv_name"></a> [k8s\_pv\_name](#input\_k8s\_pv\_name) | K8s persistent volume wordpress name | `string` | n/a | yes |
+| <a name="input_k8s_pvc_name"></a> [k8s\_pvc\_name](#input\_k8s\_pvc\_name) | K8s persistent volume claim name | `string` | n/a | yes |
+| <a name="input_k8s_storage_class_name"></a> [k8s\_storage\_class\_name](#input\_k8s\_storage\_class\_name) | Storage class name | `string` | n/a | yes |
 
 ## Outputs
 

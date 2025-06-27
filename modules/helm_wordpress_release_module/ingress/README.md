@@ -22,7 +22,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_k8s_namespace"></a> [k8s\_namespace](#input\_k8s\_namespace) | deployment napespace | `string` | n/a | yes |
+| <a name="input_k8s_namespace"></a> [k8s\_namespace](#input\_k8s\_namespace) | Deployment namespace to deploy into | `string` | n/a | yes |
 
 ## Outputs
 
