@@ -37,6 +37,7 @@ module "wordpress" {
   db_password                   = var.db_password
   k8s_namespace                 = module.k8s_namespace.interview_k8s_ns
   certificate_secret_identifier = module.cert-manager.certificate_secret_identifier
+  wordpress_admin_password      = var.wordpress_admin_password
   depends_on = [
     module.RDS,
     module.k8s_namespace,

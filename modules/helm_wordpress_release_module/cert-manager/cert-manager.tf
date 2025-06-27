@@ -59,3 +59,23 @@ resource "kubernetes_manifest" "cert_manager_clusterissuer" {
   }
   depends_on = [helm_release.cert_manager]
 }
+
+resource "kubernetes_manifest" "certificate" {
+  manifest = {
+    apiVersion = "cert-manager.io/v1"
+    kind       = "Certificate"
+    metadata = {
+      name      = local.cert_name
+      namespace = local.cert_manager_ns
+    }
+    spec = {
+      secretName = local.issued_certificate_secret
+      dnsNames   = [var.domain_name]
+      issuerRef = {
+        name = "letsencrypt-dns" # matches your ClusterIssuer
+        kind = "ClusterIssuer"
+      }
+    }
+  }
+  depends_on = [kubernetes_manifest.cert_manager_clusterissuer]
+}

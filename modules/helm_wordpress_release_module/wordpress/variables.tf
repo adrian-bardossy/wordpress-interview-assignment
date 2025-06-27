@@ -21,6 +21,10 @@ variable "certificate_secret_identifier" {
 }
 
 variable "k8s_namespace" {
-  type    = string
-  default = "wordpress"
+  type = string
+}
+
+variable "wordpress_admin_password" {
+  type      = string
+  sensitive = true
 }

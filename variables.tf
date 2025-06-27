@@ -92,4 +92,8 @@ variable "k8s_pvc_name" {
 }
 
 ### helm vars
-# cert-manager
+# wordpress helm release
+variable "wordpress_admin_password" {
+  type      = string
+  sensitive = true
+}

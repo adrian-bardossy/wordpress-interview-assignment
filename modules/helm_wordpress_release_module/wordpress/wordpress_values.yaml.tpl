@@ -6,11 +6,14 @@ externalDatabase:
   user: "${db_user}"
   password: "${db_password}"
 
+wordpressPassword: "${wordpress_admin_password}"
 extraEnvVars:
   - name: WORDPRESS_DB_USER
     value: "${db_user}"
   - name: WORDPRESS_DB_PASSWORD
     value: "${db_password}"
+  - name: WORDPRESS_PASSWORD
+    value: "${wordpress_admin_password}"
 
 ingress:
   enabled: true
