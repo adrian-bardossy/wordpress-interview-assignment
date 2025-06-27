@@ -1,3 +1,4 @@
 locals {
-  db_name = "wordpress"
+  wordpress_hostname            = "wordpress.jamfinterviewtest.com"
+  database_password_secret_name = "rds-db-password"
 }

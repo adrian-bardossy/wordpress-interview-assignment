@@ -15,3 +15,7 @@ variable "dns_region" {
   type        = string
   description = "region of cluster issuer"
 }
+
+variable "domain_name" {
+  type = string
+}

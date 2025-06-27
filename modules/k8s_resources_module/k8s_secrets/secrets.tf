@@ -5,7 +5,7 @@ resource "aws_kms_ciphertext" "db_password_encrypted" {
 
 resource "kubernetes_secret" "db_password" {
   metadata {
-    name      = local.db_password
+    name      = local.db_password_secret_identifier
     namespace = var.k8s_namespace
   }
 

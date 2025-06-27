@@ -1,5 +1,5 @@
 locals {
-  zone_name     = "interviewtest.com"
+  zone_name     = "jamfinterviewtest.com"
   comment       = "DNS zone for wordpress"
   a_record_name = "wordpress"
   a_record_type = "A"

@@ -1,3 +1,3 @@
 locals {
-  db_password = "rds-db-password"
+  db_password_secret_identifier = "rds-db-password"
 }

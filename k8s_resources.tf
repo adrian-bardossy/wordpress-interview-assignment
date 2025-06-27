@@ -1,6 +1,9 @@
 module "k8s_namespace" {
   source        = "./modules/k8s_resources_module/k8s_namespace"
   k8s_namespace = var.k8s_namespace
+  depends_on = [ 
+    module.eks
+   ]
 }
 
 module "k8s_storage" {
@@ -10,7 +13,11 @@ module "k8s_storage" {
   k8s_pvc_name           = var.k8s_pvc_name
   k8s_namespace          = module.k8s_namespace.interview_k8s_ns
   ebs_volume_id          = module.EBS.ebs_volume_id
-  depends_on             = [module.k8s_namespace]
+  depends_on             = [
+    module.k8s_namespace,
+    module.eks,
+    module.EBS
+  ]
 
 }
 
@@ -19,6 +26,9 @@ module "k8s_secrets" {
   k8s_namespace = module.k8s_namespace.interview_k8s_ns
   db_password   = var.db_password
   kms_key_id    = module.KMS.key_id
-  depends_on = [module.k8s_storage,
-  module.k8s_namespace]
+  depends_on = [
+    module.k8s_storage,
+    module.k8s_namespace,
+    module.KMS
+  ]
 }

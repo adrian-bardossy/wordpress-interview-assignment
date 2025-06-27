@@ -7,3 +7,7 @@ output "name_servers" {
   description = "List of name servers for the hosted zone"
   value       = aws_route53_zone.this.name_servers
 }
+
+output "domain_name" {
+  value = local.zone_name
+}

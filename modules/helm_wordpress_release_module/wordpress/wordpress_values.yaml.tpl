@@ -1,3 +1,5 @@
+replicaCount: 2
+
 externalDatabase:
   host: "${db_host}"
   name: "${db_name}"
@@ -9,3 +11,38 @@ extraEnvVars:
     value: "${db_user}"
   - name: WORDPRESS_DB_PASSWORD
     value: "${db_password}"
+
+ingress:
+  enabled: true
+  ingressClassName: "nginx"
+  hostname: "${hostname}"
+  tls: 
+    - secretName: "${tls_secret_name}"
+      hosts:
+        - "${hostname}"
+
+tolerations:
+  - key: "dedicated"
+    operator: "Equal"
+    value: "wordpress"
+    effect: "NoSchedule"
+
+affinity:
+  nodeAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: dedicated
+              operator: In
+              values:
+                - wordpress
+
+podAffinityPreset: soft
+podAntiAffinityPreset: hard
+
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 80
+  averageRelativeMemory: 70

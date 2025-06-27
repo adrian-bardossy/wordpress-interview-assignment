@@ -21,7 +21,9 @@ module "RDS" {
     module.VPC.vpc_public_subnet_id,
     module.VPC.vpc_private_subnet_id
   ])
-  depends_on = [module.VPC]
+  depends_on = [
+    module.VPC
+  ]
 }
 
 module "bastion" {
@@ -31,7 +33,9 @@ module "bastion" {
   vpc_subnet        = module.VPC.vpc_public_subnet_id[0]
   instance_key_name = var.instance_key_name
   public_ip         = var.public_ip
-  depends_on        = [module.VPC]
+  depends_on        = [
+    module.VPC
+  ]
 }
 
 module "EBS" {
