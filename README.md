@@ -1,3 +1,8 @@
+## Module Descriptions
+### AWS Resources Modules
+#### VPC
+- text
+
 ## Requirements
 
 | Name | Version |
