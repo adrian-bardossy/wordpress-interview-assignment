@@ -10,4 +10,10 @@ module "external-dns" {
   source            = "./modules/helm_wordpress_release_module/external-dns"
   deployment_region = var.aws_region
   k8s_namespace     = var.k8s_namespace
+  depends_on        = [module.cert-manager]
+}
+
+module "ingress_nginx" {
+  source        = "./modules/helm_wordpress_release_module/ingress"
+  k8s_namespace = var.k8s_namespace
 }
