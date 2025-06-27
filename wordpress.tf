@@ -17,3 +17,11 @@ module "ingress_nginx" {
   source        = "./modules/helm_wordpress_release_module/ingress"
   k8s_namespace = var.k8s_namespace
 }
+
+module "wordpress" {
+  source        = "./modules/helm_wordpress_release_module/wordpress"
+  db_host       = module.RDS.rds_instance_id
+  db_username   = var.db_username
+  db_password   = var.db_password
+  k8s_namespace = module.k8s_namespace.interview_k8s_ns
+}
