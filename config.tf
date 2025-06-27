@@ -3,7 +3,7 @@ terraform {
     bucket         = "jamf-interview-terraform-state-bucket"
     key            = "terraform.tfstate"
     region         = "eu-south-1"
-    dynamodb_table = "terraform-lock-state-file"
+    dynamodb_table = "jamf-interview-lock-state-table"
     encrypt        = true
   }
 }
