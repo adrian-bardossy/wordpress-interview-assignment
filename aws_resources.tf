@@ -56,5 +56,9 @@ module "KMS" {
 module "Secret_Manager" {
   source            = "./modules/aws_resources_module/Secret_Manager"
   database_password = var.db_password
-  admin_password =    var.wordpress_admin_password
+  admin_password    = var.wordpress_admin_password
+  depends_on = [
+    module.RDS,
+    module.wordpress
+  ]
 }

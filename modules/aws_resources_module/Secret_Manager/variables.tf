@@ -4,6 +4,6 @@ variable "database_password" {
 }
 
 variable "admin_password" {
-  type = string
+  type    = string
   default = "wordpress admin gui password"
 }
