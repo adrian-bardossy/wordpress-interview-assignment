@@ -1,0 +1,204 @@
+<svg width="1381pt" height="607pt" viewBox="0.00 0.00 1380.88 607.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 603)">
+<title>wordpress_architecture</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-603 1376.88,-603 1376.88,4 -4,4"/>
+<g id="clust1" class="cluster">
+<title>cluster_aws</title>
+<polygon fill="lightblue" stroke="lightblue" points="8,-8 8,-591 1364.88,-591 1364.88,-8 8,-8"/>
+<text text-anchor="middle" x="686.44" y="-574.4" font-family="Times,serif" font-size="14.00">AWS Cloud</text>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_eks</title>
+<polygon fill="lightyellow" stroke="lightyellow" points="297.98,-60 297.98,-407 1063.45,-407 1063.45,-60 297.98,-60"/>
+<text text-anchor="middle" x="680.71" y="-390.4" font-family="Times,serif" font-size="14.00">EKS Cluster</text>
+</g>
+<g id="clust3" class="cluster">
+<title>cluster_rds</title>
+<polygon fill="lightpink" stroke="lightpink" points="1221.86,-416 1221.86,-493 1356.88,-493 1356.88,-416 1221.86,-416"/>
+<text text-anchor="middle" x="1289.37" y="-476.4" font-family="Times,serif" font-size="14.00">RDS Database</text>
+</g>
+<!-- VPC -->
+<g id="node1" class="node">
+<title>VPC</title>
+<polygon fill="lightgray" stroke="black" points="182.49,-222.8 16,-222.8 16,-181.2 182.49,-181.2 182.49,-222.8"/>
+<text text-anchor="middle" x="99.24" y="-206.2" font-family="Times,serif" font-size="14.00">VPC</text>
+<text text-anchor="middle" x="99.24" y="-189.4" font-family="Times,serif" font-size="14.00">(Public &amp; Private Subnets)</text>
+</g>
+<!-- BastionHost -->
+<g id="node5" class="node">
+<title>BastionHost</title>
+<polygon fill="lightgray" stroke="black" points="421.33,-52 332.61,-52 332.61,-16 421.33,-16 421.33,-52"/>
+<text text-anchor="middle" x="376.97" y="-29.8" font-family="Times,serif" font-size="14.00">Bastion Host</text>
+</g>
+<!-- VPC&#45;&gt;BastionHost -->
+<g id="edge3" class="edge">
+<title>VPC-&gt;BastionHost</title>
+<path fill="none" stroke="black" d="M123.06,-180.76C158.1,-149.22 228.42,-90.07 297.98,-56 305.36,-52.38 313.44,-49.27 321.51,-46.62"/>
+<polygon fill="black" stroke="black" points="322.44,-50 330.99,-43.73 320.4,-43.3 322.44,-50"/>
+<text text-anchor="middle" x="244.23" y="-120.71" font-family="Times,serif" font-size="14.00">Public Subnet</text>
+</g>
+<!-- EKS -->
+<g id="node6" class="node">
+<title>EKS</title>
+<polygon fill="lightgray" stroke="black" points="447.96,-220 305.98,-220 305.98,-184 447.96,-184 447.96,-220"/>
+<text text-anchor="middle" x="376.97" y="-197.8" font-family="Times,serif" font-size="14.00">EKS Managed Cluster</text>
+</g>
+<!-- VPC&#45;&gt;EKS -->
+<g id="edge1" class="edge">
+<title>VPC-&gt;EKS</title>
+<path fill="none" stroke="black" d="M182.97,-202C218.32,-202 259.47,-202 294.67,-202"/>
+<polygon fill="black" stroke="black" points="294.36,-205.5 304.36,-202 294.36,-198.5 294.36,-205.5"/>
+<text text-anchor="middle" x="244.23" y="-206.2" font-family="Times,serif" font-size="14.00">Private Subnets</text>
+</g>
+<!-- RDS -->
+<g id="node14" class="node">
+<title>RDS</title>
+<polygon fill="lightgray" stroke="black" points="1348.88,-460 1229.86,-460 1229.86,-424 1348.88,-424 1348.88,-460"/>
+<text text-anchor="middle" x="1289.37" y="-437.8" font-family="Times,serif" font-size="14.00">MariaDB Instance</text>
+</g>
+<!-- VPC&#45;&gt;RDS -->
+<g id="edge2" class="edge">
+<title>VPC-&gt;RDS</title>
+<path fill="none" stroke="black" d="M106.03,-223.21C127.7,-297.42 211.35,-541 375.97,-541 375.97,-541 375.97,-541 974.75,-541 1074.67,-541 1184.53,-494.74 1244.05,-465.47"/>
+<polygon fill="black" stroke="black" points="1245.48,-468.66 1252.86,-461.07 1242.35,-462.4 1245.48,-468.66"/>
+<text text-anchor="middle" x="634.64" y="-545.2" font-family="Times,serif" font-size="14.00">Private Subnets</text>
+</g>
+<!-- KMS -->
+<g id="node2" class="node">
+<title>KMS</title>
+<polygon fill="lightgray" stroke="black" points="413.55,-451 340.38,-451 340.38,-415 413.55,-415 413.55,-451"/>
+<text text-anchor="middle" x="376.97" y="-428.8" font-family="Times,serif" font-size="14.00">KMS Key</text>
+</g>
+<!-- SecretsManager -->
+<g id="node3" class="node">
+<title>SecretsManager</title>
+<polygon fill="lightgray" stroke="black" points="706.78,-451 562.49,-451 562.49,-415 706.78,-415 706.78,-451"/>
+<text text-anchor="middle" x="634.64" y="-428.8" font-family="Times,serif" font-size="14.00">AWS Secrets Manager</text>
+</g>
+<!-- KMS&#45;&gt;SecretsManager -->
+<g id="edge15" class="edge">
+<title>KMS-&gt;SecretsManager</title>
+<path fill="none" stroke="black" d="M413.79,-433C449.15,-433 504.49,-433 550.8,-433"/>
+<polygon fill="black" stroke="black" points="550.54,-436.5 560.54,-433 550.54,-429.5 550.54,-436.5"/>
+<text text-anchor="middle" x="497.06" y="-437.2" font-family="Times,serif" font-size="14.00">Encryption</text>
+</g>
+<!-- WordPress -->
+<g id="node11" class="node">
+<title>WordPress</title>
+<polygon fill="lightgray" stroke="black" points="1053.29,-266 894.22,-266 894.22,-230 1053.29,-230 1053.29,-266"/>
+<text text-anchor="middle" x="973.75" y="-243.8" font-family="Times,serif" font-size="14.00">WordPress Helm Release</text>
+</g>
+<!-- SecretsManager&#45;&gt;WordPress -->
+<g id="edge14" class="edge">
+<title>SecretsManager-&gt;WordPress</title>
+<path fill="none" stroke="black" d="M707.18,-423.04C713.14,-419.95 718.6,-416 723.11,-411 760.91,-369.04 701.52,-325.48 741.11,-285.2 777.19,-248.49 834.1,-238.96 882.47,-238.72"/>
+<polygon fill="black" stroke="black" points="882.38,-242.22 892.42,-238.82 882.45,-235.22 882.38,-242.22"/>
+<text text-anchor="middle" x="807.58" y="-289.4" font-family="Times,serif" font-size="14.00">DB creds &amp; cert secrets</text>
+</g>
+<!-- Route53 -->
+<g id="node4" class="node">
+<title>Route53</title>
+<polygon fill="lightgray" stroke="black" points="704.07,-505 565.2,-505 565.2,-469 704.07,-469 704.07,-505"/>
+<text text-anchor="middle" x="634.64" y="-482.8" font-family="Times,serif" font-size="14.00">Route53 Hosted Zone</text>
+</g>
+<!-- ExternalDNS -->
+<g id="node9" class="node">
+<title>ExternalDNS</title>
+<polygon fill="lightgray" stroke="black" points="1016.35,-320 931.15,-320 931.15,-284 1016.35,-284 1016.35,-320"/>
+<text text-anchor="middle" x="973.75" y="-297.8" font-family="Times,serif" font-size="14.00">external-dns</text>
+</g>
+<!-- Route53&#45;&gt;ExternalDNS -->
+<g id="edge12" class="edge">
+<title>Route53-&gt;ExternalDNS</title>
+<path fill="none" stroke="black" d="M704.53,-473.97C711.5,-470.37 717.92,-465.8 723.11,-460 751.44,-428.38 712.33,-397.4 741.11,-366.2 786.71,-316.76 866.71,-304.12 919.72,-301.55"/>
+<polygon fill="black" stroke="black" points="919.55,-305.06 929.42,-301.19 919.29,-298.06 919.55,-305.06"/>
+<text text-anchor="middle" x="807.58" y="-370.4" font-family="Times,serif" font-size="14.00">DNS Record Sync</text>
+</g>
+<!-- Namespace -->
+<g id="node7" class="node">
+<title>Namespace</title>
+<polygon fill="lightgray" stroke="black" points="723.11,-220 546.17,-220 546.17,-184 723.11,-184 723.11,-220"/>
+<text text-anchor="middle" x="634.64" y="-197.8" font-family="Times,serif" font-size="14.00">K8s Namespace (wordpress)</text>
+</g>
+<!-- EKS&#45;&gt;Namespace -->
+<g id="edge4" class="edge">
+<title>EKS-&gt;Namespace</title>
+<path fill="none" stroke="black" d="M448.17,-202C474.79,-202 505.63,-202 534.43,-202"/>
+<polygon fill="black" stroke="black" points="534.26,-205.5 544.26,-202 534.26,-198.5 534.26,-205.5"/>
+</g>
+<!-- CertManager -->
+<g id="node8" class="node">
+<title>CertManager</title>
+<polygon fill="lightgray" stroke="black" points="1018.67,-374 928.83,-374 928.83,-338 1018.67,-338 1018.67,-374"/>
+<text text-anchor="middle" x="973.75" y="-351.8" font-family="Times,serif" font-size="14.00">cert-manager</text>
+</g>
+<!-- Namespace&#45;&gt;CertManager -->
+<g id="edge6" class="edge">
+<title>Namespace-&gt;CertManager</title>
+<path fill="none" stroke="black" d="M715.85,-220.47C718.33,-221.58 720.76,-222.76 723.11,-224 732.57,-229 731.26,-235.82 741.11,-240 768.39,-251.56 851.61,-230.67 874.06,-250 901.34,-273.5 867.88,-302.31 892.06,-329 899.05,-336.72 908.31,-342.23 918.06,-346.17"/>
+<polygon fill="black" stroke="black" points="916.72,-349.42 927.31,-349.37 919,-342.8 916.72,-349.42"/>
+</g>
+<!-- Namespace&#45;&gt;ExternalDNS -->
+<g id="edge7" class="edge">
+<title>Namespace-&gt;ExternalDNS</title>
+<path fill="none" stroke="black" d="M708.94,-220.47C724.36,-224.27 737.18,-227.33 741.11,-228 770.37,-233.01 849.4,-224.47 874.06,-241 888.26,-250.52 879.02,-263.94 892.06,-275 900.08,-281.81 909.89,-286.92 919.87,-290.75"/>
+<polygon fill="black" stroke="black" points="918.65,-294.03 929.25,-293.93 920.9,-287.4 918.65,-294.03"/>
+</g>
+<!-- IngressNginx -->
+<g id="node10" class="node">
+<title>IngressNginx</title>
+<polygon fill="lightgray" stroke="black" points="1019.86,-104 927.64,-104 927.64,-68 1019.86,-68 1019.86,-104"/>
+<text text-anchor="middle" x="973.75" y="-81.8" font-family="Times,serif" font-size="14.00">ingress-nginx</text>
+</g>
+<!-- Namespace&#45;&gt;IngressNginx -->
+<g id="edge8" class="edge">
+<title>Namespace-&gt;IngressNginx</title>
+<path fill="none" stroke="black" d="M672.68,-183.58C692.67,-174.05 717.92,-162.63 741.11,-154 799.84,-132.14 868.98,-112.62 916.34,-100.16"/>
+<polygon fill="black" stroke="black" points="917.04,-103.6 925.83,-97.69 915.27,-96.82 917.04,-103.6"/>
+</g>
+<!-- Namespace&#45;&gt;WordPress -->
+<g id="edge5" class="edge">
+<title>Namespace-&gt;WordPress</title>
+<path fill="none" stroke="black" d="M723.53,-211.64C768.61,-216.85 824.34,-223.7 874.06,-231 876.88,-231.41 879.74,-231.85 882.64,-232.29"/>
+<polygon fill="black" stroke="black" points="881.97,-235.73 892.39,-233.82 883.06,-228.81 881.97,-235.73"/>
+</g>
+<!-- StorageClass -->
+<g id="node12" class="node">
+<title>StorageClass</title>
+<polygon fill="lightgray" stroke="black" points="1055.45,-158 892.06,-158 892.06,-122 1055.45,-122 1055.45,-158"/>
+<text text-anchor="middle" x="973.75" y="-135.8" font-family="Times,serif" font-size="14.00">StorageClass &amp; PV (EBS)</text>
+</g>
+<!-- Namespace&#45;&gt;StorageClass -->
+<g id="edge9" class="edge">
+<title>Namespace-&gt;StorageClass</title>
+<path fill="none" stroke="black" d="M723.33,-185.87C771.56,-177 831.38,-166 880.34,-157"/>
+<polygon fill="black" stroke="black" points="880.88,-160.46 890.08,-155.2 879.61,-153.57 880.88,-160.46"/>
+</g>
+<!-- Secrets -->
+<g id="node13" class="node">
+<title>Secrets</title>
+<polygon fill="lightgray" stroke="black" points="1047.65,-212 899.85,-212 899.85,-176 1047.65,-176 1047.65,-212"/>
+<text text-anchor="middle" x="973.75" y="-189.8" font-family="Times,serif" font-size="14.00">K8s Secrets (DB creds)</text>
+</g>
+<!-- Namespace&#45;&gt;Secrets -->
+<g id="edge10" class="edge">
+<title>Namespace-&gt;Secrets</title>
+<path fill="none" stroke="black" d="M723.33,-199.92C774.1,-198.71 837.69,-197.21 887.96,-196.01"/>
+<polygon fill="black" stroke="black" points="888.02,-199.51 897.94,-195.78 887.86,-192.51 888.02,-199.51"/>
+</g>
+<!-- CertManager&#45;&gt;Route53 -->
+<g id="edge13" class="edge">
+<title>CertManager-&gt;Route53</title>
+<path fill="none" stroke="black" d="M928.73,-366.42C916.69,-369.69 903.75,-373.61 892.06,-378 813.91,-407.33 800.76,-429.38 723.11,-460 718.99,-461.63 714.72,-463.22 710.4,-464.77"/>
+<polygon fill="black" stroke="black" points="709.31,-461.44 701,-468.01 711.6,-468.05 709.31,-461.44"/>
+<text text-anchor="middle" x="807.58" y="-455.26" font-family="Times,serif" font-size="14.00">DNS Validation</text>
+</g>
+<!-- WordPress&#45;&gt;RDS -->
+<g id="edge11" class="edge">
+<title>WordPress-&gt;RDS</title>
+<path fill="none" stroke="black" d="M1053.6,-251.59C1103.3,-257.42 1166.45,-271.73 1211.86,-306.2 1247.57,-333.3 1269.1,-382.19 1279.85,-413.32"/>
+<polygon fill="black" stroke="black" points="1276.41,-414.07 1282.86,-422.48 1283.06,-411.89 1276.41,-414.07"/>
+<text text-anchor="middle" x="1142.65" y="-310.4" font-family="Times,serif" font-size="14.00">External DB Connection</text>
+</g>
+</g>
+</svg>
